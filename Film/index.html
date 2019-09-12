@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Gestion Film</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="assets/img/icon.ico" type="image/x-icon" />
+
+	<!-- Fonts and icons -->
+	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: { "families": ["Lato:300,400,700,900"] },
+			custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css'] },
+			active: function () {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/atlantis.min.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="assets/css/demo.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header" data-background-color="blue">
+
+				<a href="index.html" class="logo">
+					<img src="assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+					data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle toggle-sidebar">
+						<i class="icon-menu"></i>
+					</button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+
+				<div class="container-fluid">
+					<div class="collapse" id="search-nav">
+						<form class="navbar-left navbar-form nav-search mr-md-3">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<button type="submit" class="btn btn-search pr-1">
+										<i class="fa fa-search search-icon"></i>
+									</button>
+								</div>
+								<input type="text" placeholder="Search ..." class="form-control">
+							</div>
+						</form>
+					</div>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button"
+								aria-expanded="false" aria-controls="search-nav">
+								<i class="fa fa-search"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-envelope"></i>
+							</a>
+							<ul class="dropdown-menu messages-notif-box animated fadeIn"
+								aria-labelledby="messageDropdown">
+								<li>
+									<div class="dropdown-title d-flex justify-content-between align-items-center">
+
+
+									</div>
+								</li>
+								<li>
+									<div class="message-notif-scroll scrollbar-outer">
+										<div class="notif-center">
+
+										</div>
+									</div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);">Voir tous les messages<i
+											class="fa fa-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-bell"></i>
+								<span class="notification">4</span>
+							</a>
+							<ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+								<li>
+									<div class="dropdown-title">Vous avez des notifications</div>
+								</li>
+								<li>
+									<div class="notif-scroll scrollbar-outer">
+										<div class="notif-center">
+
+										</div>
+									</div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);">Voir toutes les notifications<i
+											class="fa fa-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+								<i class="fas fa-layer-group"></i>
+							</a>
+							<div class="dropdown-menu quick-actions quick-actions-info animated fadeIn">
+								<div class="quick-actions-header">
+									<span class="title mb-1">Actions</span>
+									<span class="subtitle op-8"></span>
+								</div>
+								<div class="quick-actions-scroll scrollbar-outer">
+									<div class="quick-actions-items">
+										<div class="row m-0">
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-file-1"></i>
+													<span class="text">Generated Report</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-database"></i>
+													<span class="text">Create New Database</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-pen"></i>
+													<span class="text">Create New Post</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-interface-1"></i>
+													<span class="text">Create New Task</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-list"></i>
+													<span class="text">Completed Tasks</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-file"></i>
+													<span class="text">Create New Invoice</span>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
+								aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+
+								</div>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+
+		<!-- Sidebar -->
+		<div class="sidebar sidebar-style-2">
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
+					<div class="user">
+						<div class="avatar-sm float-left mr-2">
+							<img src="assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+						</div>
+						<div class="info">
+							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									Amina Mboup
+									<span class="user-level">Administrateur</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample">
+								<ul class="nav">
+									<li>
+										<a href="#profile">
+											<span class="link-collapse">Mon profile</span>
+										</a>
+									</li>
+									<li>
+										<a href="#edit">
+											<span class="link-collapse">Modifier Profile</span>
+										</a>
+									</li>
+									<li>
+										<a href="#settings">
+											<span class="link-collapse">Paramètres</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav nav-primary">
+						<li class="nav-item active">
+							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+								<i class="fas fa-home"></i>
+								<p>Menu</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="dashboard">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="../demo1/index.html">
+											<span class="sub-item">Accueil</span>
+										</a>
+									</li>
+									<li>
+										<a href="../demo2/index.html">
+											<span class="sub-item">Autres</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section"></h4>
+						</li>
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#base">
+								<i class="fas fa-layer-group"></i>
+								<p>Accueil</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="base">
+								<ul class="nav nav-collapse">
+
+								</ul>
+							</div>
+						</li>
+
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#base">
+								<i class="fas fa-layer-group"></i>
+								<p>A Propos</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="base">
+								<ul class="nav nav-collapse">
+
+								</ul>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar -->
+
+		<div class="main-panel">
+			<div class="content">
+				<div class="panel-header bg-primary-gradient">
+					<div class="page-inner py-5">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h2 class="text-white pb-2 fw-bold">Gestion Film</h2>
+								<h5 class="text-white op-7 mb-2">Plateforme de gestion de Film</h5>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="page-inner mt--5">
+					<div class="row mt--2">
+						<div class="col-md-6">
+							<div class="card full-height">
+								<div class="card-body">
+									<div class="card-title">film<button id="b_ajouter_film"
+											class="btn btn-primary btn-round ml-auto" data-toggle="modal"
+											data-target="#addClassModal">
+											<i class="fa fa-plus"></i>
+											Ajouter un film
+										</button>
+									</div>
+									<div class="card-title">Liste de toutes les Films</div>
+
+
+									<table id="classe_tables" class="display table table-striped table-hover">
+										<thead>
+											<tr>
+												<th>Nom du Film</th>
+												<th>Type</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<th>Nom du Film</th>
+												<th>Type</th>
+												<th>Action</th>
+											</tr>
+										</tfoot>
+										<tbody>
+
+
+										</tbody>
+									</table>
+
+
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+
+						</div>
+
+
+
+					</div>
+					<footer class="footer">
+						<div class="container-fluid">
+							<nav class="pull-left">
+								<ul class="nav">
+									<li class="nav-item">
+										<a class="nav-link" href="">
+											Amina Mboup &copy
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											Help
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											Licenses
+										</a>
+									</li>
+								</ul>
+							</nav>
+							<div class="copyright ml-auto">
+								2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="">Amina Mboup
+								</a>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+				<!-- Custom template | don't include it in your project! -->
+				<div class="custom-template">
+					<div class="title">Settings</div>
+					<div class="custom-content">
+						<div class="switcher">
+							<div class="switch-block">
+								<h4>Logo Header</h4>
+								<div class="btnSwitch">
+									<button type="button" class="changeLogoHeaderColor" data-color="dark"></button>
+									<button type="button" class="selected changeLogoHeaderColor"
+										data-color="blue"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
+									<button type="button" class="changeLogoHeaderColor"
+										data-color="light-blue"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="green"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="red"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="white"></button>
+									<br />
+									<button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
+									<button type="button" class="changeLogoHeaderColor"
+										data-color="light-blue2"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
+									<button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
+								</div>
+							</div>
+							<div class="switch-block">
+								<h4>Navbar Header</h4>
+								<div class="btnSwitch">
+									<button type="button" class="changeTopBarColor" data-color="dark"></button>
+									<button type="button" class="changeTopBarColor" data-color="blue"></button>
+									<button type="button" class="changeTopBarColor" data-color="purple"></button>
+									<button type="button" class="changeTopBarColor" data-color="light-blue"></button>
+									<button type="button" class="changeTopBarColor" data-color="green"></button>
+									<button type="button" class="changeTopBarColor" data-color="orange"></button>
+									<button type="button" class="changeTopBarColor" data-color="red"></button>
+									<button type="button" class="changeTopBarColor" data-color="white"></button>
+									<br />
+									<button type="button" class="changeTopBarColor" data-color="dark2"></button>
+									<button type="button" class="selected changeTopBarColor"
+										data-color="blue2"></button>
+									<button type="button" class="changeTopBarColor" data-color="purple2"></button>
+									<button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
+									<button type="button" class="changeTopBarColor" data-color="green2"></button>
+									<button type="button" class="changeTopBarColor" data-color="orange2"></button>
+									<button type="button" class="changeTopBarColor" data-color="red2"></button>
+								</div>
+							</div>
+							<div class="switch-block">
+								<h4>Sidebar</h4>
+								<div class="btnSwitch">
+									<button type="button" class="selected changeSideBarColor"
+										data-color="white"></button>
+									<button type="button" class="changeSideBarColor" data-color="dark"></button>
+									<button type="button" class="changeSideBarColor" data-color="dark2"></button>
+								</div>
+							</div>
+							<div class="switch-block">
+								<h4>Background</h4>
+								<div class="btnSwitch">
+									<button type="button" class="changeBackgroundColor" data-color="bg2"></button>
+									<button type="button" class="changeBackgroundColor selected"
+										data-color="bg1"></button>
+									<button type="button" class="changeBackgroundColor" data-color="bg3"></button>
+									<button type="button" class="changeBackgroundColor" data-color="dark"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="custom-toggle">
+						<i class="flaticon-settings"></i>
+					</div>
+				</div>
+				<!-- End Custom template -->
+			</div>
+			<!--   Core JS Files   -->
+			<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+			<script src="assets/js/core/popper.min.js"></script>
+			<script src="assets/js/core/bootstrap.min.js"></script>
+
+			<!-- jQuery UI -->
+			<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+			<script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+			<!-- jQuery Scrollbar -->
+			<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+			<!-- Chart JS -->
+			<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+
+			<!-- jQuery Sparkline -->
+			<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+			<!-- Chart Circle -->
+			<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+
+			<!-- Datatables -->
+			<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+
+			<!-- Bootstrap Notify -->
+			<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+			<!-- jQuery Vector Maps -->
+			<script src="assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+			<script src="assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+			<!-- Sweet Alert -->
+			<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+			<!-- Atlantis JS -->
+
+
+			<!-- Atlantis DEMO methods, don't include it in your project! -->
+			<script src="assets/js/setting-demo.js"></script>
+			<script src="assets/js/demo.js"></script>
+
+
+
+			<script>
+				var Film_table;
+				var Film_table = $('#Film_tables').DataTable({
+					language: {
+						"url": "assets/i18n/datatable.json"
+					},
+					dom: 'Bfrtip',
+					buttons: [
+						{
+							extend: 'excel',
+							text: '<i data-toggle="tooltip" data-placement="left" title="exporter au format excel" class="fa fa-file-excel-o"></i>'
+						},
+						{
+							extend: 'print',
+							text: '<i data-toggle="tooltip" data-placement="left" title="imprimer" class="fa fa-print"></i>'
+						}
+					],
+					ajax: {
+						"url": 'traitement/film.php'
+					},
+					columns: [
+						{ "data": "nom" },
+						{ "data": "Type" },
+
+						{
+							"data": "",
+							"render": function (data) {
+								return '<div style="font-size:10px;" align="center">' +
+									'<button data-toggle="tooltip" data-placement="left" title="modifier" class="btn-warning modifier_film"><i class="fa fa-edit"></i></button>' +
+									'&nbsp;<button data-toggle="tooltip" data-placement="left" title="supprimer" class="btn-danger supprimer_film"><i class="fa fa-trash"></i></button>';
+							}
+						}
+					]
+				});
+
+				// lorsque l'uitlisateur clique sur modifier Film
+				$('#Film_tables tbody').on('click', '.modifier_film', function (e) {
+					e.preventDefault();
+					var data = Film_table.row($(this).parents('tr')).data();
+					console.log(data);
+
+					$(".modal-title").html('<span class="fw-mediumbold">Modification des informations du film</span> <span class="fw-light"><b>' + data.id + ' ' + data.nom + '</b></span>');
+					$("#addEleveModal").modal('show');
+
+					$(".title_genereal").html('Modifier informations');
+
+					$(".modal-footer").html('<input type="button" value="Modifier" class="btn btn-primary" onclick="modifier_film()"></input>' +
+						'<button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>');
+
+					$("#id").val(data.id);
+					$("#nom").val(data.nom);
+					$("#synopsis").val(data.synopsis);
+					$("#Annee").val(data.Annee);
+					$("#Type").val(data.type);
+					$("#Prix").val(data.Prix);
+
+
+
+				});
+
+				// lorsque l'uitlisateur clique sur supprimer film
+				$('#Film_tables tbody').on('click', '.supprimer_film', function (e) {
+					e.preventDefault();
+					var data = Film_table.row($(this).parents('tr')).data();
+					console.log(data);
+
+					$(".modal-title").html('<span class="fw-mediumbold">suppression du film</span> <span class="fw-light"><b>' + data.id + ' ' + data.nom + ' </b></span>');
+					$("#Sup_film").modal('show');
+
+
+					$(".title_genereal").html('Voulez vous vraiment supprimer le film <b>:' + data.id + ' ' + data.nom + ' </b>');
+
+					$(".modal-footer").html('<input type="button" value="confimer" class="btn btn-primary" onclick="supprimer_film(\'' + data.id + '\',\'' + data.nom + '\')"></input>' +
+						'<button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>');
+
+
+
+
+				});
+
+
+
+				$("#b_ajouter_film").on("click", function (e) { //user click on remove text
+					$(".modal-title").html('<span class="fw-mediumbold">Ajout d\'un nouveau</span> <span class="fw-light">film</span>');
+					$(".title_genereal").html('Veuillez remplir le formulaire');
+					$(".modal-footer").html('<button type="button" id="addRowButton" class="btn btn-primary" onclick="ajouter_film()">Ajouter</button><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>');
+
+					$("#id").val('');
+					$("#nom").val('');
+					$("#synopsis").val('');
+					$("#Annee").val('');
+					$("#Type").val('');
+					$("#Prix").val('');
+
+				})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				function ajouter_film() {
+					var s = $('#Film').serialize();
+					//console.log(s);
+					var request_ajax_liste = $.ajax({
+						url: 'traitement/ajouter.php',
+						type: "POST",
+						data: s,
+						cache: false,
+						success: result11,
+						dataType: "json"
+					});
+
+					function result11(data) {
+						classe_table.ajax.reload();
+						$("#addClassModal").modal('hide');
+						swal("Success!", "Vous venez d'ajouter un film!", {
+							icon: "success",
+							buttons: {
+								confirm: {
+									className: 'btn btn-success'
+								}
+							},
+						});
+
+						return {
+							//== Init
+							init: function () {
+								initDemos();
+							},
+						};
+
+
+					}
+
+				}
+
+
+
+				function modifier_film() {
+					var s = $('#Film').serialize();
+					//console.log(s);
+					var request_ajax_liste = $.ajax({
+						url: 'traitement/modifier_film.php',
+						type: "POST",
+						data: s,
+						cache: false,
+						success: result11,
+						dataType: "json"
+					});
+
+					function result11(data) {
+						Film_table.ajax.reload();
+						$("#addClassModal").modal('hide');
+						swal("Success!", "film modifiée avec succés!", {
+							icon: "success",
+							buttons: {
+								confirm: {
+									className: 'btn btn-success'
+								}
+							},
+						});
+
+						return {
+							//== Init
+							init: function () {
+								initDemos();
+							},
+						};
+
+
+					}
+
+				}
+
+
+
+				function supprimer_film(Film) {
+					 
+					var request_ajax_liste = $.ajax({
+						url: 'traitement/supprimer_film.php',
+						type: "POST",
+						data: { Film: Film },
+						cache: false,
+						success: result11,
+						dataType: "json"
+					});
+
+					function result11(data) {
+						Film_table.ajax.reload();
+						$("#addClassModal").modal('hide');
+						swal("Success!", "Le Film " + Film + " a été supprimée avec succés!", {
+							icon: "success",
+							buttons: {
+								confirm: {
+									className: 'btn btn-success'
+								}
+							},
+						});
+
+						return {
+							//== Init
+							init: function () {
+								initDemos();
+							},
+						};
+
+
+					}
+
+				}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				function get_film() {
+					$.ajax({
+						type: "POST",
+						url: "traitement/get_film.php",
+						data: { type: "a" },
+						success: result11,
+						dataType: "json"
+					});
+
+					function result11(data) {
+
+
+
+
+						$('#Nom_film_a').empty();
+						var toAppend = '<option value="">Selectionner</option>';
+						for (var k = 0; k < data.length; k++)
+
+							toAppend += '<option value="' + data[k].nom + '">' + data[k].nom + '</option>';
+
+						$('#Nom_film_a').append(toAppend);
+
+					}//fin de la boucle
+
+				} get_film();
+
+
+			</script>
+
+
+
+
+			<!-- Formuaire new Film -->
+			<div class="modal fade" id="addClassModal" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header no-bd">
+							<h5 class="modal-title">
+								<span class="fw-mediumbold">
+									Nouvelle</span>
+								<span class="fw-light">
+									Film
+								</span>
+							</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p class="small title_genereal">Veuillez remplir le formulaire</p>
+							<form id="classes" method="POST" action="ajouter.php">
+								<div class="row">
+									<div class="col-sm-12 nom_classe">
+										<div class="form-group form-group-default">
+											<label>Numero Film</label>
+											<input id="id" name="id" type="number" class="form-control"
+												placeholder="Numero Film">
+										</div>
+									</div>
+									<div class="col-sm-12 nom_classe">
+										<div class="form-group form-group-default">
+											<label>Nom du Film</label>
+											<input id="nom" name="nom" type="text" class="form-control"
+												placeholder="Nom du film">
+										</div>
+									</div>
+									<div class="col-sm-12 nom_classe">
+										<div class="form-group form-group-default">
+											<label>Synopsis du Film</label>
+											<input id="synopsis" name="synopsis" type="text" class="form-control"
+												placeholder="synopsis du film">
+										</div>
+									</div>
+									<div class="col-sm-12 nom_classe">
+										<div class="form-group form-group-default">
+											<label>Annee</label>
+											<input id="Annee" name="Annee" type="date" class="form-control"
+												placeholder="Annee du film">
+										</div>
+									</div>
+									<div class="col-sm-12 nom_classe">
+										<div class="form-group form-group-default">
+											<label>Prix du Film</label>
+											<input id="Prix" name="Prix" type="number" class="form-control"
+												placeholder="Prix du film">
+										</div>
+									</div>
+									<div class="col-md-6 pr-0 nom_ser">
+										<div class="form-group form-group-default">
+											<label>Type</label>
+											<select id="Nom_Ser" name="genre">
+												<option>Selectionner</option>
+												<option value="Action">Action</option>
+												<option value="Commedie">Commedie</option>
+												<option value="Fiction">Fiction</option>
+											</select>
+											</div>
+									</div>
+									<!--<div class="modal-footer no-bd">-->
+									<button type="submit" class="btn btn-primary">Ajouter</button>
+									<button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+								<!--</div>-->
+								</div>
+								<!--<input type="hidden" name="table" value='Film'> -->
+							</form>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+
+</body>
+
+</html>

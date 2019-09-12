@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "connectionTimeout": 60,
+            "database": "film",
+            "dialect": "MySQL",
+            "name": "cool",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "root"
+        }
+    ]
+}
